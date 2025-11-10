@@ -1,6 +1,7 @@
 // Server
 const express = require('express')
 const server = express()
+const router = require('./routes/router')
 const PORT = process.env.PORT || 3000
 
 // Handle security
@@ -18,9 +19,12 @@ server.use(helmet.contentSecurityPolicy({
     }
 }))
 
-
+// cors config
 server.use(cors())
-server.use(express.json())
+server.use(express.json())  
 server.use(express.urlencoded({ extended: true}))
+
+// localhost:${port}
+server.use('/', router)
 
 server.listen(PORT, ()=> console.log(`The server is listening at https://localhost:${PORT}. Ctrl+C to exit.`))

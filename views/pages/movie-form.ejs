@@ -1,0 +1,45 @@
+<%- include('../partials/header') %>
+
+<main class="main" id="main">
+    <div class="container">
+        <h2 class="text-center text-capitalize">add a movie</h2>
+        <form 
+            action="http://localhost:3000/api/movie/create" 
+            method="post"
+            class="form" 
+            id="movieForm"
+        >
+        <div class="row mb-3">
+            <div class="col">
+                <label for="movie" class="form-label">
+                    movie name
+                </label>
+                <input 
+                    type="text"
+                    id="movie"
+                    name="movie"
+                    class="form-control"
+                />
+            </div>
+            <div class="col">
+                <label for="rating" class="form-label">
+                    rating
+                </label>
+                <input 
+                    type="text"
+                    id="rating"
+                    name="rating"
+                    class="form-control"
+                />
+            </div>
+        </div>
+        <button 
+            class="btn btn-primary"
+            type="submit"
+            role="button"
+        >Add Movie</button>
+    </form>
+    </div>
+</main>
+
+<%- include('../partials/footer') %>
